@@ -19,6 +19,8 @@ private:
     TextGadget* m_gadgetPlay;
     TextGadget* m_gadgetA;
     TextGadget* m_gadgetB;
+    TextGadget* m_gadgetTitle;
+    TextGadget* m_gadgetTest;
 public:
     ButtonsState buttonsState;
 
@@ -27,6 +29,8 @@ public:
     void draw(IDisplayCanvas* canvas, GridDimension* dimension);
 
     static TextGadget* buildGadget(int position, const String& charIcon);
+
+    static ISapInGrid* buildSapForLine(int line, int lenght);
 };
 
 #endif //NBOMED_TESTGADGET_H

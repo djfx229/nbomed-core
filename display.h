@@ -91,7 +91,7 @@ public:
     int width;
     int height;
 
-    XywhSap();
+    XywhSap(int gridX = 0, int gridY = 0, int sizeWidth = 1, int sizeHeight = 1);
 
     int getX();
     int getY();

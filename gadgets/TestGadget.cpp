@@ -9,6 +9,8 @@ TestGadget::TestGadget() : m_startPosition(0),
                            m_gadgetPlay(buildGadget(m_startPosition++, L"P")),
                            m_gadgetA(buildGadget(m_startPosition++, L"A")),
                            m_gadgetB(buildGadget(m_startPosition++, L"B")),
+                           m_gadgetTitle(new TextGadget(buildSapForLine(1, 6), L"NBOMED")),
+                           m_gadgetTest(new TextGadget(buildSapForLine(2, 4), L"TEST")),
                            buttonsState(0) {
 }
 
@@ -74,6 +76,9 @@ void TestGadget::draw(IDisplayCanvas *canvas, GridDimension* dimension) {
     if (isPressed(buttonsState, BUTTON_B)) {
         m_gadgetB->draw(canvas, dimension);
     }
+
+    m_gadgetTitle->draw(canvas, dimension);
+    m_gadgetTest->draw(canvas, dimension);
 }
 
 TextGadget* TestGadget::buildGadget(int position, const String& charIcon) {
@@ -84,4 +89,11 @@ TextGadget* TestGadget::buildGadget(int position, const String& charIcon) {
     sap->height = 1;
     TextGadget* gadget = new TextGadget(sap, charIcon);
     return gadget;
+}
+
+ISapInGrid * TestGadget::buildSapForLine(int line, int lenght) {
+    XywhSap *sap = new XywhSap();
+    sap -> y = line;
+    sap -> width = lenght;
+    return sap;
 }

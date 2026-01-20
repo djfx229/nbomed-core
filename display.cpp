@@ -1,6 +1,9 @@
 #include "nbomed-core/display.h"
 
-XywhSap::XywhSap() : x(0), y(0), width(0), height(0) {
+XywhSap::XywhSap(int gridX, int gridY, int sizeWidth, int sizeHeight) : x(gridX),
+                                                                        y(gridY),
+                                                                        width(sizeWidth),
+                                                                        height(sizeHeight) {
 }
 
 int XywhSap::getX() {
